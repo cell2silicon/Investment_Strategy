@@ -1,1 +1,1 @@
-web: gunicorn investment-strategy.app:app
+web: gunicorn .app:app
