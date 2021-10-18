@@ -45,12 +45,11 @@ def scrape_info():
     # Bitcoin price and daily retun
     index_bit = crypto_soup.find_all("td", class_="left bold elp name cryptoName first js-currency-name")[0].get_text()
     price_bit = crypto_soup.find_all("td", class_="price js-currency-price")[0].get_text()
-    change_bit = crypto_soup.find_all("td", class_="js-currency-change-24h pid-1057391-pcp redFont")[0].get_text()
+    
 
     # Ethereum price and daily return
     index_ete = crypto_soup.find_all("td", class_="left bold elp name cryptoName first js-currency-name")[1].get_text()
     price_ete = crypto_soup.find_all("td", class_="price js-currency-price")[1].get_text()
-    change_ete = crypto_soup.find_all("td", class_="js-currency-change-24h pid-1061443-pcp redFont")[0].get_text()
 
 # Close browser after scrapping
     browser.quit()
@@ -64,11 +63,9 @@ def scrape_info():
         "usb_price" : price_usb,
         "bitcoin" : index_bit,
         "bit_price" : price_bit,
-        "bit_change" : change_bit,
         "ethereum" : index_ete,
         "ete_price" : price_ete,
-        "ete_change" : change_ete
     }
-
+    print(investing_data)
     # Return results
     return investing_data
