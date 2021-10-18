@@ -6,7 +6,7 @@ from flask import (
     jsonify,
     request,
     redirect)
-from scrape_invest import scrape_info   
+# from scrape_invest import scrape_info   
  
 
 #################################################
@@ -20,14 +20,14 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     
-    results = scrape_info()
-    return render_template("index.html", invest=results)
+    # results = scrape_info()
+    # return render_template("index.html", invest=results)
+    return render_template("index.html")
 
-
-@app.route("/scrape")
-def scrape():
-    results = scrape_info()
-    return render_template("index.html", invest=results)
+# @app.route("/scrape")
+# def scrape():
+#     results = scrape_info()
+#     return render_template("index.html", invest=results)
 
 
 if __name__ == "__main__":
